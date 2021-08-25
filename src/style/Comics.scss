@@ -1,0 +1,70 @@
+.loading{
+    margin:100px;
+    display: flex;
+    justify-content: center;
+}
+
+    .container{
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: center;
+        .container_comic{
+            background-color: antiquewhite;
+            margin: 10px;
+            padding: 10px;
+            width: 190px;
+            border: 2px solid black;
+            border-radius: 5px ;
+
+            //border neon 
+            img{
+                padding:10px;
+                width:168px;
+                height:252px;
+            }
+            .container_column{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height:260px;
+                padding:10px;
+                text-align: left;
+
+                h1{
+                    margin: 0;
+                    color: rgb(43, 39, 39);
+                    font-size: 14px;            
+                }
+                p{
+                    margin: 5px;
+                    color: gray;
+                    font-size:12px;
+                }
+
+                button {
+                    margin-top:5px;
+                    width:100%;
+                    height:35px;
+                    background-color: rgb(226, 21, 21);
+                    color: white;
+                    font-weight: bold;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: all 0.1s;
+                    &:hover{
+                        background-color: rgb(170, 45, 45);
+                    }
+                } 
+    
+            }
+            
+        }   
+    }
+    
+
+
+
+
+

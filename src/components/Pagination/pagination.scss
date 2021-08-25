@@ -1,0 +1,41 @@
+.pagination {
+    margin: 20px auto;
+    display: flex;
+    list-style: none;
+    outline: none;
+    justify-content: center;
+    
+    > .active > a{
+      background-color: #e21515 ;
+      border-color: black ;
+      color: #fff;
+      transition: all 0.1s;
+      &:hover{
+          background-color: rgb(170, 45, 45);
+      }
+    }
+      
+    > li > a{
+      border: 1px solid black ;
+      border-radius:5px;
+      margin: 5px;
+      padding: 5px 10px;
+      outline: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+      background-color: #e21515 ;
+      border-color: black ;
+      outline: none ;
+    }
+    
+    > li > a, .pagination > li > span{
+      color: black
+    }
+
+  }
+
+
+
