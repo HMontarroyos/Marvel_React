@@ -53,8 +53,12 @@
                     border-radius: 5px;
                     cursor: pointer;
                     transition: all 0.1s;
-                    &:hover{
+                    &:not([disabled]):hover{
                         background-color: rgb(170, 45, 45);
+                    }
+                    &:disabled{
+                        background-color: rgb(119, 116, 116);
+                        cursor:auto;
                     }
                 } 
     
