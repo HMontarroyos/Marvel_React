@@ -12,7 +12,6 @@ class Comics extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            comicsWithDescription: [],
             results: [],
         };
     }
@@ -23,19 +22,13 @@ class Comics extends Component {
             .catch((err) => {
                 console.error(err);
             });
-        console.log(`RESULTS`, results);
         const comicsWithCover = results.results
             .filter((result) => result.images.length > 0)
             .sort((a, b) => {
                 return a.title < b.title ? -1 : a.title > b.title ? 1 : 0;
             });
-        const comicsWithDescription = comicsWithCover.filter(
-            (result) => result.description !== null
-        );
-        console.log(`DESCRIPTION`, comicsWithDescription);
         this.setState({
             results: comicsWithCover,
-            comicsWithDescription,
             pageCount: Math.ceil(results.total / results.limit),
         });
     }

@@ -22,8 +22,6 @@ class ComicDescription extends Component {
             });
 
         this.setState({ result });
-
-        console.log(`RESULT`, result);
     }
 
     render() {
@@ -58,7 +56,7 @@ class ComicDescription extends Component {
                                             </>
                                         )}
 
-                                        <h2>Number of Pages</h2>
+                                        <h2>Number of Pages: </h2>
                                         <p className="paragrafh">
                                             {result.pageCount > 0
                                                 ? result.pageCount
