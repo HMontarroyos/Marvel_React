@@ -4,6 +4,7 @@ import api from "../services/api";
 import "../style/Comics.scss";
 import "../components/Pagination/pagination.scss";
 import Loading from "../components/Loading";
+import Button from "../components/Button";
 import ReactPaginate from "react-paginate";
 /* import Cursor from "react-custom-pointer";
 import Img from "../assets/america_shield.png"; */
@@ -45,7 +46,7 @@ class Comics extends Component {
                     </div>
                 )}
                 {console.log(`RESULTS`, this.state.results)}
-                <div className={"container"}>
+                <div className={"container_view_comics"}>
                     {this.state.results.length > 0 &&
                         this.state.results.map((result) => (
                             <div className={"container_comic"} key={result.id}>
@@ -64,7 +65,7 @@ class Comics extends Component {
                                         }`}</p>
                                     </div>
                                     <Link to={`/comics/${result.id}`}>
-                                        <button
+                                        <Button
                                             disabled={
                                                 result.description === null &&
                                                 true
@@ -73,25 +74,27 @@ class Comics extends Component {
                                             {result.description === null
                                                 ? "Without Description"
                                                 : "See More"}
-                                        </button>
+                                        </Button>
                                     </Link>
                                 </div>
                             </div>
                         ))}
                 </div>
-                <ReactPaginate
-                    previousLabel={"prev"}
-                    nextLabel={"next"}
-                    breakLabel={"..."}
-                    breakClassName={"break-me"}
-                    pageCount={this.state.pageCount}
-                    marginPagesDisplayed={2}
-                    pageRangeDisplayed={5}
-                    /* onPageChange={this.handlePageClick} */
-                    containerClassName={"pagination"}
-                    subContainerClassName={"pages pagination"}
-                    activeClassName={"active"}
-                />
+                {this.state.pageCount > 0 && (
+                    <ReactPaginate
+                        previousLabel={"prev"}
+                        nextLabel={"next"}
+                        breakLabel={"..."}
+                        breakClassName={"break-me"}
+                        pageCount={this.state.pageCount}
+                        marginPagesDisplayed={2}
+                        pageRangeDisplayed={5}
+                        /* onPageChange={this.handlePageClick} */
+                        containerClassName={"pagination"}
+                        subContainerClassName={"pages pagination"}
+                        activeClassName={"active"}
+                    />
+                )}
             </>
         );
     }

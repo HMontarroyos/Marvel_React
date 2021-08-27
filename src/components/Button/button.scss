@@ -1,0 +1,19 @@
+.button_see_more {
+    margin-top:5px;
+    width:100%;
+    height:35px;
+    background-color: rgb(226, 21, 21);
+    color: white;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.1s;
+    &:not([disabled]):hover{
+        background-color: rgb(170, 45, 45);
+    }
+    &:disabled{
+        background-color: rgb(119, 116, 116);
+        cursor:auto;
+    }
+} 

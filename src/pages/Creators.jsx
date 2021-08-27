@@ -1,6 +1,10 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import api from "../services/api";
 import Loading from "../components/Loading";
+import Button from "../components/Button";
+
+import "../style/Creators.scss";
 class Creators extends Component {
     constructor(props) {
         super(props);
@@ -38,7 +42,8 @@ class Creators extends Component {
                         <Loading />
                     </div>
                 )}
-                <div className={"container"}>
+                {console.log(this.state.results)}
+                <div className={"container_view_creators"}>
                     {this.state.results.length > 0 &&
                         this.state.results.map((result) => (
                             <div
@@ -50,10 +55,12 @@ class Creators extends Component {
                                     alt={"avatar"}
                                 />
                                 <div className={"container_name_creator"}>
-                                    <div>
-                                        <h1>{result.fullName}</h1>
-                                        <p>{result.title}</p>
-                                        {result.comics.items.length > 0 && (
+                                    <h1>{result.fullName}</h1>
+                                </div>
+                                <Link to={`/creators/${result.id}`}>
+                                    <Button>See more</Button>
+                                </Link>
+                                {/*                                         {result.comics.items.length > 0 && (
                                             <>
                                                 <h2>
                                                     Comics that feature works by
@@ -63,11 +70,7 @@ class Creators extends Component {
                                                     (item) => (
                                                         <p>{item.name}</p>
                                                     )
-                                                )}
-                                            </>
-                                        )}
-                                    </div>
-                                </div>
+                                                )} */}
                             </div>
                         ))}
                 </div>
