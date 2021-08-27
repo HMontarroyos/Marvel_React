@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import api from "../services/api";
 import "../style/Comics.scss";
 import "../components/Pagination/pagination.scss";
@@ -69,15 +70,18 @@ class Comics extends Component {
                                                 : `Not Specified`
                                         }`}</p>
                                     </div>
-                                    <button
-                                        disabled={
-                                            result.description === null && true
-                                        }
-                                    >
-                                        {result.description === null
-                                            ? "Without Description"
-                                            : "See More"}
-                                    </button>
+                                    <Link to={`/comics/${result.id}`}>
+                                        <button
+                                            disabled={
+                                                result.description === null &&
+                                                true
+                                            }
+                                        >
+                                            {result.description === null
+                                                ? "Without Description"
+                                                : "See More"}
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         ))}

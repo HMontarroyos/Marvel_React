@@ -1,0 +1,48 @@
+.loading{
+    margin:100px;
+    display: flex;
+    justify-content: center;
+}
+
+.container-single{
+    display: flex;
+    margin:20px;
+    padding:20px;
+    justify-content: space-between;
+    background-color: antiquewhite;
+    border-radius:5px;
+
+    img{
+        padding:10px;
+        width:300px;
+        height:450px;
+    }
+
+    .container_text{
+        h1{
+            margin: 0;
+            color: rgb(43, 39, 39);
+            font-size: 25px;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
+            font-weight: bold;   
+        }
+
+        h2{
+            margin: 0;
+            color: rgb(43, 39, 39);
+            letter-spacing: 1px;
+            font-weight: bold;   
+            font-family: 'Bebas Neue', cursive;
+        }
+        div{
+            display: flex;
+            align-items: center;
+            
+            .paragrafh{
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+        }
+    }
+}

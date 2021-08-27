@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Characters from "./pages/Characters";
 import Comics from "./pages/Comics";
+import ComicDescription from "./pages/ComicDescription.jsx";
 import Creators from "./pages/Creators";
 import Events from "./pages/Events";
 import Series from "./pages/Series";
@@ -19,6 +20,7 @@ const Routes = () => {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/characters" component={Characters} />
                 <Route exact path="/comics" component={Comics} />
+                <Route exact path="/comics/:id" component={ComicDescription} />
                 <Route exact path="/creators" component={Creators} />
                 <Route exact path="/events" component={Events} />
                 <Route exact path="/series" component={Series} />
