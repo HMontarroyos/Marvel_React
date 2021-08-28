@@ -21,7 +21,13 @@ class Creators extends Component {
             });
 
         const CreatorWithDescriptionOfTheComics = results
-            .filter((result) => result.comics.items.length > 0)
+            .filter(
+                (result) =>
+                    result.comics.items.length > 0 ||
+                    result.events.items.length > 0 ||
+                    result.series.items.length > 0 ||
+                    result.stories.items.length > 0
+            )
             .sort((a, b) => {
                 return a.fullName < b.fullName
                     ? -1
@@ -58,7 +64,7 @@ class Creators extends Component {
                                     <h1>{result.fullName}</h1>
                                 </div>
                                 <Link to={`/creators/${result.id}`}>
-                                    <Button>See more</Button>
+                                    <Button></Button>
                                 </Link>
                             </div>
                         ))}

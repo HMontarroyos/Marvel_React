@@ -12,7 +12,7 @@ class Button extends Component {
                 className={"button_see_more"}
                 disabled={this.props.disabled || false}
             >
-                {this.props.children}
+                {this.props.children || "See More"}
             </button>
         );
     }

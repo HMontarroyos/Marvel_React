@@ -45,9 +45,40 @@ class CreatorDescription extends Component {
                                 <div className="container_description">
                                     <h1>{result.fullName}</h1>
                                     <h2>Published Comic Books</h2>
-                                    {result.comics.items.map((item) => (
-                                        <p>{item.name}</p>
-                                    ))}
+                                    {result.comics.items.length > 0 && (
+                                        <>
+                                            <h3>Comics:</h3>
+                                            {result.comics.items.map((item) => (
+                                                <p>{item.name}</p>
+                                            ))}
+                                        </>
+                                    )}
+                                    {result.events.items.length > 0 && (
+                                        <>
+                                            <h3>Events:</h3>
+                                            {result.events.items.map((item) => (
+                                                <p>{item.name}</p>
+                                            ))}
+                                        </>
+                                    )}
+                                    {result.series.items.length > 0 && (
+                                        <>
+                                            <h3>Series:</h3>
+                                            {result.series.items.map((item) => (
+                                                <p>{item.name}</p>
+                                            ))}
+                                        </>
+                                    )}
+                                    {result.stories.items.length > 0 && (
+                                        <>
+                                            <h3>Stories:</h3>
+                                            {result.stories.items.map(
+                                                (item) => (
+                                                    <p>{item.name}</p>
+                                                )
+                                            )}
+                                        </>
+                                    )}
                                 </div>
                             </div>
                         </>

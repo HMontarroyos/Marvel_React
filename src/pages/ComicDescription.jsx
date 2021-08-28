@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import moment from "moment";
 import api from "../services/api";
 import Loading from "../components/Loading";
+import ImgNotFound from "../assets/image_not_available.jpg";
 
 import "../style/ComicDescription.scss";
 
@@ -37,10 +38,14 @@ class ComicDescription extends Component {
                     {this.state.result.map((result) => (
                         <>
                             <div className="container-single">
-                                <img
-                                    src={`${result.images[0].path}.${result.images[0].extension}`}
-                                    alt={"capa"}
-                                />
+                                {result.images.length > 0 ? (
+                                    <img
+                                        src={`${result.images[0].path}.${result.images[0].extension}`}
+                                        alt={"capa"}
+                                    />
+                                ) : (
+                                    <img src={ImgNotFound} alt={"capa"} />
+                                )}
                                 <div className="container_text">
                                     <h1>{result.series.name}</h1>
                                     <p>{result.title}</p>

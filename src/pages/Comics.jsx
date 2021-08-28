@@ -6,6 +6,7 @@ import "../components/Pagination/pagination.scss";
 import Loading from "../components/Loading";
 import Button from "../components/Button";
 import ReactPaginate from "react-paginate";
+import ImgNotFound from "../assets/image_not_available.jpg";
 /* import Cursor from "react-custom-pointer";
 import Img from "../assets/america_shield.png"; */
 
@@ -24,7 +25,7 @@ class Comics extends Component {
                 console.error(err);
             });
         const comicsWithCover = results.results
-            .filter((result) => result.images.length > 0)
+            /* .filter((result) => result.images.length > 0) */
             .sort((a, b) => {
                 return a.title < b.title ? -1 : a.title > b.title ? 1 : 0;
             });
@@ -50,10 +51,15 @@ class Comics extends Component {
                     {this.state.results.length > 0 &&
                         this.state.results.map((result) => (
                             <div className={"container_comic"} key={result.id}>
-                                <img
-                                    src={`${result.images[0].path}.${result.images[0].extension}`}
-                                    alt={"capa"}
-                                />
+                                {result.images.length > 0 ? (
+                                    <img
+                                        src={`${result.images[0].path}.${result.images[0].extension}`}
+                                        alt={"capa"}
+                                    />
+                                ) : (
+                                    <img src={ImgNotFound} alt={"capa"} />
+                                )}
+
                                 <div className={"container_column"}>
                                     <div>
                                         <h1>{result.series.name}</h1>
@@ -66,14 +72,14 @@ class Comics extends Component {
                                     </div>
                                     <Link to={`/comics/${result.id}`}>
                                         <Button
-                                            disabled={
+                                        /*                                             disabled={
                                                 result.description === null &&
                                                 true
-                                            }
+                                            } */
                                         >
-                                            {result.description === null
+                                            {/*                                             {result.description === null
                                                 ? "Without Description"
-                                                : "See More"}
+                                                : "See More"} */}
                                         </Button>
                                     </Link>
                                 </div>
