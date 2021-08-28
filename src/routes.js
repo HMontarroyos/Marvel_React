@@ -5,8 +5,9 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Characters from "./pages/Characters";
 import Comics from "./pages/Comics";
-import ComicDescription from "./pages/ComicDescription.jsx";
+import ComicDescription from "./pages/ComicDescription";
 import Creators from "./pages/Creators";
+import CreatorDescription from "./pages/CreatorDescription";
 import Events from "./pages/Events";
 import Series from "./pages/Series";
 import Stories from "./pages/Stories";
@@ -22,6 +23,11 @@ const Routes = () => {
                 <Route exact path="/comics" component={Comics} />
                 <Route exact path="/comics/:id" component={ComicDescription} />
                 <Route exact path="/creators" component={Creators} />
+                <Route
+                    exact
+                    path="/creators/:id"
+                    component={CreatorDescription}
+                />
                 <Route exact path="/events" component={Events} />
                 <Route exact path="/series" component={Series} />
                 <Route exact path="/stories" component={Stories} />

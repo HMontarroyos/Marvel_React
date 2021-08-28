@@ -60,17 +60,6 @@ class Creators extends Component {
                                 <Link to={`/creators/${result.id}`}>
                                     <Button>See more</Button>
                                 </Link>
-                                {/*                                         {result.comics.items.length > 0 && (
-                                            <>
-                                                <h2>
-                                                    Comics that feature works by
-                                                    this creator:
-                                                </h2>
-                                                {result.comics.items.map(
-                                                    (item) => (
-                                                        <p>{item.name}</p>
-                                                    )
-                                                )} */}
                             </div>
                         ))}
                 </div>

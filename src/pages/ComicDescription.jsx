@@ -73,13 +73,17 @@ class ComicDescription extends Component {
                                             )}
                                         </>
                                     )}
-                                    <h2>Description:</h2>
-                                    <p>
-                                        {result.description.replace(
-                                            /(<([^>]+)>)/gi,
-                                            ""
-                                        )}
-                                    </p>
+                                    {result.description && (
+                                        <>
+                                            <h2>Description:</h2>
+                                            <p>
+                                                {result.description.replace(
+                                                    /(<([^>]+)>)/gi,
+                                                    ""
+                                                )}
+                                            </p>
+                                        </>
+                                    )}
                                 </div>
                             </div>
                         </>

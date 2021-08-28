@@ -1,0 +1,53 @@
+.loading{
+    margin:100px;
+    display: flex;
+    justify-content: center;
+}
+
+.container_view_creator_description{
+    display: flex;
+    margin:20px;
+    padding:20px;
+    background-color: antiquewhite;
+    border-radius:5px;
+
+.container-creator-single{
+    display: flex;
+
+    img{
+        padding:10px;
+        width:320px;
+        height:350px;
+        border-radius:40px;
+    }
+
+    .container_description{
+        padding-left:20px;
+
+        h1{
+            margin: 0;
+            padding:0;
+            color: rgb(43, 39, 39);
+            font-size: 25px;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
+            font-weight: bold;   
+        }
+
+        h2{
+            font-size:20px;
+            margin: 0;
+            color: rgb(43, 39, 39);
+            letter-spacing: 1px;
+            font-weight: bold;   
+            font-family: 'Bebas Neue', cursive;
+        }
+    }
+    
+}
+    
+
+}
+
+
+
